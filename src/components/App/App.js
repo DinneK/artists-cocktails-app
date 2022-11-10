@@ -28,7 +28,7 @@ class App extends Component {
             <SinglePainting artists={this.state.artists} />
           </Route>
           <Route exact path="/artists/cocktail">
-            <CocktailContainer component={CocktailContainer} />
+            <CocktailContainer artists={this.state.artists} />
           </Route>
         </Switch>
         <Footer />
