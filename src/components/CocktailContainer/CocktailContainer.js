@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./CocktailContainer.css";
 
 const CocktailContainer = ({ artists }) => {
@@ -8,7 +8,7 @@ const CocktailContainer = ({ artists }) => {
       <div>
         <img
           src={artist.cocktail_image}
-          alt={`a picture of ${artist.cocktail_name}`}
+          alt={`of ${artist.cocktail_name}`}
           className="cocktail-picture"
         />
       </div>
