@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-// import { Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Header from "../Header/Header";
 import PaintingsContainer from "../PaintingsContainer/PaintingsContainer";
-// import SinglePainting from "../SinglePainting/SinglePainting";
-// import CocktailContainer from "../CocktailContainer/CocktailContainer";
+import SinglePainting from "../SinglePainting/SinglePainting";
+import CocktailContainer from "../CocktailContainer/CocktailContainer";
 import Footer from "../Footer/Footer";
 import "./App.css";
 import artistsData from "../../mockData";
@@ -20,17 +20,17 @@ class App extends Component {
     return (
       <main>
         <Header />
-        {/* <Switch> */}
-        {/* <Route exact path="/"> */}
-        <PaintingsContainer artists={this.state.artists} />
-        {/* </Route> */}
-        {/* <Route component={SinglePainting}>
-            <SinglePainting component={SinglePainting} />
-          </Route> */}
-        {/* <Route component={CocktailContainer}>
+        <Switch>
+          <Route exact path="/">
+            <PaintingsContainer artists={this.state.artists} />
+          </Route>
+          <Route exact path="/artists/painting">
+            <SinglePainting artists={this.state.artists} />
+          </Route>
+          <Route exact path="/artists/cocktail">
             <CocktailContainer component={CocktailContainer} />
-          </Route> */}
-        {/* </Switch> */}
+          </Route>
+        </Switch>
         <Footer />
       </main>
     );
