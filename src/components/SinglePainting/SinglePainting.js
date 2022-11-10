@@ -1,9 +1,7 @@
 import React from "react";
 import "./SinglePainting.css";
 
-const SinglePainting = ({ artists }) => {
-  const artist = artists[0];
-
+const SinglePainting = ({ artist }) => {
   return (
     <section>
       <div>
@@ -21,6 +19,9 @@ const SinglePainting = ({ artists }) => {
         <p>{artist.artist_fact}</p>
         <p>Born: {artist.born}</p>
         <p>Died: {artist.died}</p>
+      </div>
+      <div>
+        <button>PRESS ME!</button>
       </div>
     </section>
   );
