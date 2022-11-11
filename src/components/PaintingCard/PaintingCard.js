@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./PaintingCard.css";
 
 const PaintingCard = ({ id, painting, title, mainLiquor }) => {
@@ -10,3 +11,10 @@ const PaintingCard = ({ id, painting, title, mainLiquor }) => {
 };
 
 export default PaintingCard;
+
+PaintingCard.propTypes = {
+  id: PropTypes.number.isRequired,
+  painting: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  mainLiquor: PropTypes.string.isRequired,
+};
