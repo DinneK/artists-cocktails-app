@@ -7,6 +7,7 @@ import CocktailContainer from "../CocktailContainer/CocktailContainer";
 import Footer from "../Footer/Footer";
 import { getArtistData } from "../../apiCalls";
 import SearchByTitle from "../SearchByTitle/SearchByTitle";
+import SearchByLiquor from "../SearchByLiquor/SearchByLiquor";
 import "./App.css";
 // import artistsData from "../../mockData";
 
@@ -17,6 +18,7 @@ class App extends Component {
       loading: false,
       artists: [],
       searchTitle: "",
+      searchLiquor: "",
     };
   }
 
@@ -24,7 +26,6 @@ class App extends Component {
     this.setState({ loading: true });
     getArtistData()
       .then((data) => {
-        console.log({ data });
         this.setState({
           loading: false,
           artists: data.artists,
@@ -46,6 +47,14 @@ class App extends Component {
     this.setState({ searchTitle: "" });
   };
 
+  updateSearchByLiquor = (value) => {
+    this.setState({ searchLiquor: value });
+  };
+
+  clearSearchByLiquor = () => {
+    this.setState({ searchLiquor: "" });
+  };
+
   render() {
     return (
       <main>
@@ -53,9 +62,11 @@ class App extends Component {
         <Switch>
           <Route exact path="/">
             <SearchByTitle updateSearchByTitle={this.updateSearchByTitle} />
+            <SearchByLiquor updateSearchByLiquor={this.updateSearchByLiquor} />
             <PaintingsContainer
               artists={this.state.artists}
               searchByTitle={this.state.searchTitle}
+              searchByLiquor={this.state.searchLiquor}
             />
           </Route>
           <Route
