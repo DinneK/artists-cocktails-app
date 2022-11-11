@@ -1,6 +1,7 @@
 import React from "react";
 import PaintingCard from "../PaintingCard/PaintingCard";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./PaintingsContainer.css";
 
 const PaintingsContainer = ({ artists }) => {
@@ -22,3 +23,10 @@ const PaintingsContainer = ({ artists }) => {
 };
 
 export default PaintingsContainer;
+
+PaintingsContainer.propTypes = {
+  id: PropTypes.number.isRequired,
+  painting: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  mainLiquor: PropTypes.string.isRequired,
+};
