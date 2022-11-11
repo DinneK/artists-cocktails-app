@@ -19,6 +19,9 @@ const CocktailContainer = ({ cocktail }) => {
         <p>Instructions: {cocktail.instructions}</p>
         <p>{cocktail.artist_liquor_fact}</p>
       </div>
+      <Link to={`/artists/${cocktail.id}`}>
+        <button>PRESS ME! I'll take you back to you work of art </button>
+      </Link>
       <Link to={`/`}>
         <button>PRESS ME! I'll take you home</button>
       </Link>
