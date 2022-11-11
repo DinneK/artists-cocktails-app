@@ -5,15 +5,34 @@ import PaintingsContainer from "../PaintingsContainer/PaintingsContainer";
 import SinglePainting from "../SinglePainting/SinglePainting";
 import CocktailContainer from "../CocktailContainer/CocktailContainer";
 import Footer from "../Footer/Footer";
+import { getArtistData } from "../../apiCalls";
 import "./App.css";
-import artistsData from "../../mockData";
+// import artistsData from "../../mockData";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      artists: artistsData.artists,
+      loading: false,
+      artists: [],
     };
+  }
+
+  componentDidMount() {
+    this.setState({ loading: true });
+    getArtistData()
+      .then((data) => {
+        this.setState({
+          loading: false,
+          artists: data.artists,
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          loading: false,
+          error: `Uh oh! That's a ${error.message}, please try again later!`,
+        });
+      });
   }
 
   render() {
