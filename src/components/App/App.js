@@ -28,7 +28,7 @@ class App extends Component {
             exact
             path="/artists/:artist"
             render={({ match }) => {
-              console.log(typeof parseInt(match.params.artist));
+              // console.log("1", match);
               const renderPainting = this.state.artists.find(
                 (painting) => painting.id === parseInt(match.params.artist)
               );
@@ -36,9 +36,15 @@ class App extends Component {
             }}
           />
 
-          <Route exact path="/artists/cocktail">
-            <CocktailContainer artists={this.state.artists} />
-          </Route>
+          <Route
+            path="/cocktails/:cocktail"
+            render={({ match }) => {
+              const renderCocktail = this.state.artists.find(
+                (cocktails) => cocktails.id === parseInt(match.params.cocktail)
+              );
+              return <CocktailContainer cocktail={renderCocktail} />;
+            }}
+          />
         </Switch>
         <Footer />
       </main>
