@@ -15,6 +15,7 @@ class App extends Component {
     this.state = {
       loading: false,
       artists: [],
+      searchByTitle: "",
     };
   }
 
@@ -35,13 +36,24 @@ class App extends Component {
       });
   }
 
+  updateSearchByTitle = (value) => {
+    this.setState({ searchByTitle: value });
+  };
+
+  clearSearchByTitle = () => {
+    this.setState({ searchByTitle: "" });
+  };
+
   render() {
     return (
       <main>
         <Header />
         <Switch>
           <Route exact path="/">
-            <PaintingsContainer artists={this.state.artists} />
+            <PaintingsContainer
+              artists={this.state.artists}
+              searchByTitle={this.state.searchByTitle}
+            />
           </Route>
           <Route
             exact
