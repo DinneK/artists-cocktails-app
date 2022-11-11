@@ -7,7 +7,9 @@ import "./PaintingsContainer.css";
 const PaintingsContainer = ({ artists, searchByTitle }) => {
   let paintingCards;
 
+  console.log("1", searchByTitle);
   if (!searchByTitle) {
+    console.log({ searchByTitle });
     paintingCards = artists.map((artist) => {
       return (
         <Link to={`/artists/${artist.id}`} key={artist.id}>
@@ -22,7 +24,11 @@ const PaintingsContainer = ({ artists, searchByTitle }) => {
     });
   } else {
     paintingCards = artists.reduce((acc, artist) => {
-      if (artist.title.toLowerCase().includes(searchByTitle.toLowerCase())) {
+      if (
+        artist.painting_title
+          .toLowerCase()
+          .includes(searchByTitle.toLowerCase())
+      ) {
         acc.push(
           <Link to={`/artists/${artist.id}`} key={artist.id}>
             <PaintingCard
