@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./SinglePainting.css";
 
 const SinglePainting = ({ artist }) => {
@@ -20,9 +21,12 @@ const SinglePainting = ({ artist }) => {
         <p>Born: {artist.born}</p>
         <p>Died: {artist.died}</p>
       </div>
-      <div>
-        <button>PRESS ME!</button>
-      </div>
+      <Link to={`/cocktails/${artist.id}`}>
+        <button>PRESS ME! I'm a cocktail</button>
+      </Link>
+      <Link to={`/`}>
+        <button>PRESS ME! I'll take you home</button>
+      </Link>
     </section>
   );
 };
