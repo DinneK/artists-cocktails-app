@@ -5,8 +5,9 @@ import "./SavedCocktails.css";
 const SavedCocktails = ({ savedCocktails, artists }) => {
   console.log({ savedCocktails });
 
-  const savedCocktailsCont = artists.map((drink) => {
-    const { cocktail_image, cocktail_name, id } = drink;
+  const savedCocktailsCont = savedCocktails.map((savedCocktailId) => {
+    const artist = artists.find((artist) => artist.id === savedCocktailId);
+    const { cocktail_image, cocktail_name, id } = artist;
     return (
       <CocktailCard
         key={id}
