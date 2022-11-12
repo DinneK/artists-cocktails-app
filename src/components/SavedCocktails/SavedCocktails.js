@@ -2,7 +2,7 @@ import React from "react";
 import CocktailCard from "../CocktailCard/CocktailCard";
 import "./SavedCocktails.css";
 
-const SavedCocktails = ({ savedCocktails, artists }) => {
+const SavedCocktails = ({ savedCocktails, artists, onDeleteCocktail }) => {
   console.log({ savedCocktails });
 
   const savedCocktailsCont = savedCocktails.map((savedCocktailId) => {
@@ -14,6 +14,7 @@ const SavedCocktails = ({ savedCocktails, artists }) => {
         drinkImage={cocktail_image}
         title={cocktail_name}
         id={id}
+        onDeleteCocktail={onDeleteCocktail}
       />
     );
   });
