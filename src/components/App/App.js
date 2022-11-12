@@ -9,6 +9,7 @@ import { getArtistData } from "../../apiCalls";
 import SearchByTitle from "../SearchByTitle/SearchByTitle";
 import SearchByLiquor from "../SearchByLiquor/SearchByLiquor";
 import SavedCocktails from "../SavedCocktails/SavedCocktails";
+import BadURL from "../BadURL/BadURL";
 import "./App.css";
 // import artistsData from "../../mockData";
 
@@ -128,6 +129,7 @@ class App extends Component {
               // addCocktail={this.addCocktail}
             />
           </Route>
+          <Route component={BadURL} />
         </Switch>
         <Footer />
       </main>
