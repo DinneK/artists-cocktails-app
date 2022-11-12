@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import "./CocktailCard.css";
 // import PropTypes from 'prop-types';
 
-const CocktailCard = ({ drinkImage, title, id }) => {
+const CocktailCard = ({ drinkImage, title, id, onDeleteCocktail }) => {
+  const handleDeleteCocktailClick = (id) => {
+    onDeleteCocktail(id);
+  };
+
   return (
     <section className="cocktail-card-container">
       <Link to={`/cocktails/${id}`}>
@@ -14,13 +18,7 @@ const CocktailCard = ({ drinkImage, title, id }) => {
           </div>
         </article>
       </Link>
-      <button
-        onClick={() => {
-          console.log("clicked");
-        }}
-      >
-        Click me
-      </button>
+      <button onClick={() => handleDeleteCocktailClick(id)}>Click me</button>
     </section>
   );
 };
