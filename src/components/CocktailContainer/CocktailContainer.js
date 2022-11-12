@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SavedCocktails from "../SavedCocktails/SavedCocktails";
 import "./CocktailContainer.css";
+// { useState, useEffect }
 
 const CocktailContainer = ({ cocktail }) => {
+  // const [cocktailList, setCocktailList] = useState([]);
+
+  // console.log({ cocktailList });
   return (
     <section>
       <div>
@@ -24,6 +29,12 @@ const CocktailContainer = ({ cocktail }) => {
       </Link>
       <Link to={`/`}>
         <button>PRESS ME! I'll take you home</button>
+      </Link>
+      {/* <button onClick={() => setCocktailList([...cocktailList, cocktail])}>
+        Save Cocktail
+      </button> */}
+      <Link to={`/savedcocktails`}>
+        <button>PRESS ME! Saved Cocktails</button>
       </Link>
     </section>
   );

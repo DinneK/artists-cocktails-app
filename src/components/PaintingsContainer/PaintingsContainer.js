@@ -62,7 +62,20 @@ const PaintingsContainer = ({ artists, searchByTitle, searchByLiquor }) => {
     });
   }
 
-  return <div className="paintings-container">{paintingCards}</div>;
+  let error = paintingCards.length === 0 ? true : false;
+
+  return (
+    <div className="paintings-container">
+      {error && (
+        <div className="error-container">
+          <span className="error">
+            Sorry, that work doesn't exist! Try again.
+          </span>
+        </div>
+      )}
+      <section>{paintingCards}</section>
+    </div>
+  );
 };
 
 export default PaintingsContainer;
