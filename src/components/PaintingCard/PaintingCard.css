@@ -1,7 +1,17 @@
-/* .card {
-  height: 30vh;
-} */
+.painting {
+  height: 40vh;
+}
 
-img {
-  height: 30vh;
+.painting:hover {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  transform: scale(1.05);
+  transition: .5s;
+}
+
+.painting-title {
+  color: #000000;
+  font-family: 'Cinzel Decorative', cursive;
+  text-decoration: none;
+  margin-bottom: 7vh;
+  margin-top: 0;
 }

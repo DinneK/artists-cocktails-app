@@ -6,7 +6,7 @@ const PaintingCard = ({ id, painting, title, mainLiquor }) => {
   return (
     <div className="card">
       <img src={painting} alt={`a painting of ${title}`} className="painting" />
-      <p>{title}</p>
+      <h4 className="painting-title">{title}</h4>
     </div>
   );
 };

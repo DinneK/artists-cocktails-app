@@ -7,7 +7,9 @@ function Header() {
     <div className="header-container">
       <h1>The Art of the Cocktail</h1>
       <Link to={`/savedcocktails`}>
-        <button>PRESS ME! Saved Cocktails</button>
+        {/* <div class="button-box"> */}
+        <button className="saved-cocktails-button">Saved Cocktails</button>
+        {/* </div> */}
       </Link>
     </div>
   );

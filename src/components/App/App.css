@@ -1,0 +1,7 @@
+.searches {
+  align-items: center;
+  display: flex;
+  height: 7vh;
+  justify-content: center;
+  margin-bottom: 3%;
+}
