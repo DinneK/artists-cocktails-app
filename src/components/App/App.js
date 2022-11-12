@@ -17,6 +17,7 @@ class App extends Component {
     super();
     this.state = {
       loading: false,
+      error: "",
       artists: [],
       searchTitle: "",
       searchLiquor: "",
@@ -82,6 +83,11 @@ class App extends Component {
           <Route exact path="/">
             <SearchByTitle updateSearchByTitle={this.updateSearchByTitle} />
             <SearchByLiquor updateSearchByLiquor={this.updateSearchByLiquor} />
+            {this.state.error && (
+              <div className="error-container">
+                <span className="error">{this.state.error}</span>
+              </div>
+            )}
             <PaintingsContainer
               artists={this.state.artists}
               searchByTitle={this.state.searchTitle}

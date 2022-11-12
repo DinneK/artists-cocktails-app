@@ -1,8 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
-  return <h1>The Art of the Cocktail (Header)</h1>;
+  return (
+    <div className="header-container">
+      <h1>The Art of the Cocktail</h1>
+      <Link to={`/savedcocktails`}>
+        <button>PRESS ME! Saved Cocktails</button>
+      </Link>
+    </div>
+  );
 }
 
 export default Header;
