@@ -13,31 +13,39 @@ const SinglePainting = ({
   };
 
   return (
-    <section>
-      <div>
-        <img
-          src={artist.painting_image}
-          alt={`a painting of ${artist.painting_title}`}
-          className="painting"
-        />
+    <section className="single-painting-container">
+      <div className="single-painting-box">
+        <div className="single-painting-img-box">
+          <img
+            src={artist.painting_image}
+            alt={`a painting of ${artist.painting_title}`}
+            className="painting-in-single"
+          />
+        </div>
+        <div className="painting-description">
+          <div className="inner-painting-description">
+            <h2 className="single-painting-title">{artist.painting_title}</h2>
+            <p className="single-painting-desc">
+              Year Created: {artist.painting_year}
+            </p>
+            <p className="single-painting-desc">Style: {artist.style}</p>
+            <h3 className="single-painting-artist">{artist.artist_name}</h3>
+            <p className="single-painting-desc">{artist.artist_fact}</p>
+            <p className="single-painting-desc">Born: {artist.born}</p>
+            <p className="single-painting-desc">Died: {artist.died}</p>
+          </div>
+        </div>
       </div>
-      <div>
-        <h2>{artist.painting_title}</h2>
-        <p>Year Created: {artist.painting_year}</p>
-        <p>Style: {artist.style}</p>
-        <h3>{artist.artist_name}</h3>
-        <p>{artist.artist_fact}</p>
-        <p>Born: {artist.born}</p>
-        <p>Died: {artist.died}</p>
+      <div className="single-painting-button-style">
+        <Link to={`/cocktails/${artist.id}`}>
+          <button className="discover">Discover a Cocktail</button>
+        </Link>
+        <Link to={`/`}>
+          <button className="home" onClick={() => clearHandler()}>
+            HOME
+          </button>
+        </Link>
       </div>
-      <Link to={`/cocktails/${artist.id}`}>
-        <button>PRESS ME! I'm a cocktail</button>
-      </Link>
-      <Link to={`/`}>
-        <button onClick={() => clearHandler()}>
-          PRESS ME! I'll take you home
-        </button>
-      </Link>
     </section>
   );
 };

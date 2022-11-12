@@ -1,0 +1,88 @@
+.single-painting-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: center;
+}
+
+.single-painting-box {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.single-painting-img-box {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+}
+
+.painting-in-single {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  height: 40vh;
+}
+
+.painting-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  border: 2px solid #000000;
+  width: 45vw;
+}
+
+.inner-painting-description {
+  align-items: center;
+  border: 7px solid #000000;
+  display: flex;
+  flex-direction: column;
+  height: 35vh;
+  justify-content: center;
+  overflow: scroll;
+  width: 42vw;
+}
+
+.single-painting-title {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 4vh;
+  margin: 0;
+  margin-top: 9%;
+}
+
+.single-painting-desc {
+  margin: 0;
+  text-align: center;
+  width: 39vw;
+  margin-bottom: 2%;
+}
+
+.single-painting-artist{
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2.5vh;
+  margin: 0;
+  margin-bottom: 3%;
+}
+
+.single-painting-button-style {
+  display: flex;
+  margin-top: 3%;
+}
+
+.home,
+.discover {
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: 600;
+  height: 4vh;
+  margin-right: 3vw;
+}
+
+.home:hover,
+.discover:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transition: 0.4s;
+}
