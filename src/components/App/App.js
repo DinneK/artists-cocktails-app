@@ -57,7 +57,24 @@ class App extends Component {
     this.setState({ searchLiquor: "" });
   };
 
+  // addCocktail = (newCocktail) => {
+  //   this.setState({
+  //     savedCocktails: [...this.state.savedCocktails, newCocktail],
+  //   });
+  // };
+
+  saveACocktail = (id) => {
+    const allCocktails = this.state.artists
+      .map((singleCocktail) => singleCocktail.cocktail_name)
+      .flat();
+    const foundCocktail = allCocktails.find((cocktail) => cocktail.id === id);
+    this.setState({
+      savedCocktails: [...this.state.savedCocktails, foundCocktail],
+    });
+  };
+
   render() {
+    console.log(this.state.artists);
     return (
       <main>
         <Header />
@@ -99,7 +116,11 @@ class App extends Component {
             }}
           />
           <Route exact path="/savedcocktails">
-            <SavedCocktails savedCocktails={this.state.savedCocktails} />
+            <SavedCocktails
+              artists={this.state.artists}
+              savedCocktails={this.state.savedCocktails}
+              // addCocktail={this.addCocktail}
+            />
           </Route>
         </Switch>
         <Footer />
