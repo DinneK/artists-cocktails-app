@@ -1,0 +1,29 @@
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #ffffff;
+  height: 13.5vh;
+  width: 100vw;
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  width: 10vw
+}
+
+h4 {
+  color: #000000;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1em;
+  margin: 1%;
+}
+
+.links-container {
+  filter: invert(0%) sepia(6%) saturate(7500%) hue-rotate(328deg) brightness(94%) contrast(106%);
+}
+
+.link-logo {
+  height: 5vh;
+}

@@ -19,7 +19,7 @@ class SearchByLiquor extends Component {
 
   render() {
     return (
-      <section>
+      <section className="liquor-search">
         <select name="liquors" onChange={this.handleChange}>
           <option value={null}>Select Liquor</option>
           <option value="vodka">Vodka</option>

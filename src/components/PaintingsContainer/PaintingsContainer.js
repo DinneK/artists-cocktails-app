@@ -73,7 +73,7 @@ const PaintingsContainer = ({ artists, searchByTitle, searchByLiquor }) => {
           </span>
         </div>
       )}
-      <section>{paintingCards}</section>
+      <section className="paintings-container">{paintingCards}</section>
     </div>
   );
 };

@@ -1,20 +1,19 @@
-#Pull Request
-
+## Pull Request
 - [ ] New feature (adds functionality)
 - [ ] Refactor
 - [ ] Add Styling
 - [ ] Fix Bugs
 - [ ] Add Testing
 
-#Describe Changes
+## Describe Changes
 
-#Please describe the tests that you ran to verify your changes.
+## Next Steps
 
+## Please describe the tests that you ran to verify your changes.
 - [ ] I tested my changes in the browser
 - [ ] I tested my changes with Cypress
 
-#Checklist:
-
+## Checklist:
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented on my code, particularly in hard-to-understand areas

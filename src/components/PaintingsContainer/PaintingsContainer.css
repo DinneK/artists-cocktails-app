@@ -1,7 +1,8 @@
 .paintings-container{
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 70vh;
+  overflow: scroll;
+  width: 100vw;
 }

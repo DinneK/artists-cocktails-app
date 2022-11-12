@@ -76,14 +76,17 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.artists);
     return (
       <main>
         <Header />
         <Switch>
           <Route exact path="/">
-            <SearchByTitle updateSearchByTitle={this.updateSearchByTitle} />
-            <SearchByLiquor updateSearchByLiquor={this.updateSearchByLiquor} />
+            <section className="searches">
+              <SearchByTitle updateSearchByTitle={this.updateSearchByTitle} />
+              <SearchByLiquor
+                updateSearchByLiquor={this.updateSearchByLiquor}
+              />
+            </section>
             {this.state.error && (
               <div className="error-container">
                 <span className="error">{this.state.error}</span>

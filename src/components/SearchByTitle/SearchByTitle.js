@@ -19,7 +19,7 @@ class SearchByTitle extends Component {
 
   render() {
     return (
-      <form>
+      <section>
         <input
           type="text"
           name="search"
@@ -27,7 +27,7 @@ class SearchByTitle extends Component {
           placeholder="Search for a work by title!"
           onChange={this.handleChange}
         />
-      </form>
+      </section>
     );
   }
 }
