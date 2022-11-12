@@ -19,9 +19,20 @@ const SavedCocktails = ({ savedCocktails, artists, onDeleteCocktail }) => {
     );
   });
 
+  let error = savedCocktailsCont.length === 0 ? true : false;
+
   return (
     <div>
-      {savedCocktailsCont}
+      {error && (
+        <div className="error-container">
+          <span className="error">
+            You have no saved cocktails, go explore!
+          </span>
+        </div>
+      )}
+      <section className="saved-cocktail-container">
+        {savedCocktailsCont}
+      </section>
       {/* <button onClick={(event) => this.handleChange(event)}>Save</button> */}
     </div>
   );

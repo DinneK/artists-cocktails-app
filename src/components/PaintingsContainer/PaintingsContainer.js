@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./PaintingsContainer.css";
 
-const PaintingsContainer = ({ artists, searchByTitle, searchByLiquor }) => {
+const PaintingsContainer = ({
+  artists,
+  searchByTitle,
+  searchByLiquor,
+  loading,
+}) => {
   let paintingCards;
 
   if (searchByTitle && !searchByLiquor) {
@@ -63,6 +68,10 @@ const PaintingsContainer = ({ artists, searchByTitle, searchByLiquor }) => {
   }
 
   let error = paintingCards.length === 0 ? true : false;
+
+  if (loading && error) {
+    error = false;
+  }
 
   return (
     <div className="paintings-container">

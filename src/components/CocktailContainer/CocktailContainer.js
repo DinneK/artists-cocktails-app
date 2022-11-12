@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SavedCocktails from "../SavedCocktails/SavedCocktails";
+// import SavedCocktails from "../SavedCocktails/SavedCocktails";
 import "./CocktailContainer.css";
-// { useState, useEffect }
+import bookmarkAdd from "../../assets/bookmark_add.svg";
+import bookmarkDelete from "../../assets/bookmark_delete.svg";
 
-const CocktailContainer = ({ cocktail, onSaveCocktail, onDeleteCocktail }) => {
-  // const [cocktailList, setCocktailList] = useState([]);
-
-  // console.log({ cocktailList });
+const CocktailContainer = ({
+  cocktail,
+  onSaveCocktail,
+  onDeleteCocktail,
+  savedCocktails,
+}) => {
   const handleSaveCocktailClick = (id) => {
     onSaveCocktail(id);
   };
@@ -37,15 +40,16 @@ const CocktailContainer = ({ cocktail, onSaveCocktail, onDeleteCocktail }) => {
       <Link to={`/`}>
         <button>PRESS ME! I'll take you home</button>
       </Link>
-      <button onClick={() => handleSaveCocktailClick(cocktail.id)}>
-        Save Cocktail
-      </button>
-      <button onClick={() => handleDeleteCocktailClick(cocktail.id)}>
-        Delete Cocktail
-      </button>
-      <Link to={`/savedcocktails`}>
-        <button>PRESS ME! Saved Cocktails</button>
-      </Link>
+      {!savedCocktails.includes(cocktail.id) && (
+        <button onClick={() => handleSaveCocktailClick(cocktail.id)}>
+          <img src={bookmarkAdd} alt="add favorite" />
+        </button>
+      )}
+      {savedCocktails.includes(cocktail.id) && (
+        <button onClick={() => handleDeleteCocktailClick(cocktail.id)}>
+          <img src={bookmarkDelete} alt="delete favorite" />
+        </button>
+      )}
     </section>
   );
 };
