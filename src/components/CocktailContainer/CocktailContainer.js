@@ -4,10 +4,17 @@ import SavedCocktails from "../SavedCocktails/SavedCocktails";
 import "./CocktailContainer.css";
 // { useState, useEffect }
 
-const CocktailContainer = ({ cocktail }) => {
+const CocktailContainer = ({ cocktail, onSaveCocktail, onDeleteCocktail }) => {
   // const [cocktailList, setCocktailList] = useState([]);
 
   // console.log({ cocktailList });
+  const handleSaveCocktailClick = (id) => {
+    onSaveCocktail(id);
+  };
+
+  const handleDeleteCocktailClick = (id) => {
+    onDeleteCocktail(id);
+  };
   return (
     <section>
       <div>
@@ -30,9 +37,12 @@ const CocktailContainer = ({ cocktail }) => {
       <Link to={`/`}>
         <button>PRESS ME! I'll take you home</button>
       </Link>
-      {/* <button onClick={() => setCocktailList([...cocktailList, cocktail])}>
+      <button onClick={() => handleSaveCocktailClick(cocktail.id)}>
         Save Cocktail
-      </button> */}
+      </button>
+      <button onClick={() => handleDeleteCocktailClick(cocktail.id)}>
+        Delete Cocktail
+      </button>
       <Link to={`/savedcocktails`}>
         <button>PRESS ME! Saved Cocktails</button>
       </Link>
