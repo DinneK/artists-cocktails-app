@@ -27,7 +27,6 @@ class SearchByTitle extends Component {
           placeholder="Search for a work by title!"
           onChange={this.handleChange}
         />
-        {/* <button onChange={this.handleChange}></button> */}
       </form>
     );
   }

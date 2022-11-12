@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import { getArtistData } from "../../apiCalls";
 import SearchByTitle from "../SearchByTitle/SearchByTitle";
 import SearchByLiquor from "../SearchByLiquor/SearchByLiquor";
+import SavedCocktails from "../SavedCocktails/SavedCocktails";
 import "./App.css";
 // import artistsData from "../../mockData";
 
@@ -19,6 +20,7 @@ class App extends Component {
       artists: [],
       searchTitle: "",
       searchLiquor: "",
+      savedCocktails: [],
     };
   }
 
@@ -77,7 +79,13 @@ class App extends Component {
               const renderPainting = this.state.artists.find(
                 (painting) => painting.id === parseInt(match.params.artist)
               );
-              return <SinglePainting artist={renderPainting} />;
+              return (
+                <SinglePainting
+                  artist={renderPainting}
+                  clearSearchByTitle={this.clearSearchByTitle}
+                  clearSearchByLiquor={this.clearSearchByLiquor}
+                />
+              );
             }}
           />
 
@@ -90,6 +98,9 @@ class App extends Component {
               return <CocktailContainer cocktail={renderCocktail} />;
             }}
           />
+          <Route exact path="/savedcocktails">
+            <SavedCocktails savedCocktails={this.state.savedCocktails} />
+          </Route>
         </Switch>
         <Footer />
       </main>

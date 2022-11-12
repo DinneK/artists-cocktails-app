@@ -2,7 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./SinglePainting.css";
 
-const SinglePainting = ({ artist }) => {
+const SinglePainting = ({
+  artist,
+  clearSearchByTitle,
+  clearSearchByLiquor,
+}) => {
+  const clearHandler = () => {
+    clearSearchByTitle();
+    clearSearchByLiquor();
+  };
+
   return (
     <section>
       <div>
@@ -25,7 +34,9 @@ const SinglePainting = ({ artist }) => {
         <button>PRESS ME! I'm a cocktail</button>
       </Link>
       <Link to={`/`}>
-        <button>PRESS ME! I'll take you home</button>
+        <button onClick={() => clearHandler()}>
+          PRESS ME! I'll take you home
+        </button>
       </Link>
     </section>
   );
