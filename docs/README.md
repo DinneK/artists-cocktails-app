@@ -5,7 +5,7 @@
 
 <h3 align="center">Explore Art & The Art of The Drink</h3>
 
-<h4 align="center"><a href="https://rancid-tomatillos-theta.vercel.app/"><strong>Deploy Link</strong></a> | <a href="https://github.com/DinneK/artists-cocktails-app"><strong>Explore The Front-End Docs »</strong></a> | <a href="https://github.com/DinneK/artists-cocktails-api"><strong>Explore The Back-End Docs »</strong></a></h4>
+<h4 align="center"><a href="https://artists-cocktails-app.vercel.app/"><strong>Deploy Link</strong></a> | <a href="https://github.com/DinneK/artists-cocktails-app"><strong>Explore The Front-End Docs »</strong></a> | <a href="https://github.com/DinneK/artists-cocktails-api"><strong>Explore The Back-End Docs »</strong></a></h4>
 
 <p></p>
 
@@ -32,17 +32,14 @@
 </details>
 
 ## About The Project
-HELLLOOOOOOOOO
+
 <br>
 
-<h3 align="center">Search Bar:</h3>
-<p align="center"><img width="750" src="https://user-images.githubusercontent.com/63877492/197603767-134d2ca4-83a9-4b9d-aba2-f1af08636ffc.gif" alt="Rancid Tomatillos search bar preview gif"></p>
+<h3 align="center">Home Page</h3>
+<p align="center"><img width="750" src="https://user-images.githubusercontent.com/63877492/201547703-93fdeb27-3293-4676-af51-99cadef06499.mov" alt="The Art of the Cocktail Home Page"></p>
 
-<h3 align="center">Trailer Preview:</h3>
-<p align="center"><img width="750" src="https://media.giphy.com/media/KImDwiv7rDsVWuGoPn/giphy.gif" alt="Rancid Tomatillos trailer preview gif"></p>
-
-<h3 align="center">Bad URL Handling:</h3>
-<p align="center"><img width="750" src="https://user-images.githubusercontent.com/63877492/197593670-a19fd3ac-18f8-4538-9c7c-2e46694a0c77.gif" alt="Rancid Tomatillos bad URL preview gif"></p>
+<h3 align="center">Saved Page</h3>
+<p align="center"><img width="750" src="https://user-images.githubusercontent.com/63877492/201547774-ce5be6a5-0cd5-4d07-9a5e-7dd1a98a2737.mov" alt="The Art of the Cocktail Saved Page"></p>
 
 <br />
 This paired project was assigned during the third module of Turing's Front-End Engineering program, about 13-14 weeks into its students learning how to code. The details of this project are outlined in <a href="https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html">this</a> project spec.
