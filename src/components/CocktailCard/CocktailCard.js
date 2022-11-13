@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./CocktailCard.css";
+import bookmarkDelete from "../../assets/bookmark_delete.svg";
 // import PropTypes from 'prop-types';
 
 const CocktailCard = ({ drinkImage, title, id, onDeleteCocktail }) => {
@@ -9,16 +10,18 @@ const CocktailCard = ({ drinkImage, title, id, onDeleteCocktail }) => {
   };
 
   return (
-    <section className="cocktail-card-container">
+    <section className="saved-cocktail-card-container">
       <Link to={`/cocktails/${id}`}>
         <article className="cocktail-card">
           <div className="cocktail-image-container">
             <img className="cocktail-image" src={drinkImage} alt="drink" />
-            <p className="title">{title}</p>
+            <p className="cocktail-title-card">{title}</p>
           </div>
         </article>
       </Link>
-      <button onClick={() => handleDeleteCocktailClick(id)}>Click me</button>
+      <button className="save" onClick={() => handleDeleteCocktailClick(id)}>
+        <img className="save-logo" src={bookmarkDelete} alt="delete favorite" />
+      </button>
     </section>
   );
 };
