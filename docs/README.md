@@ -32,17 +32,20 @@
 </details>
 
 ## About The Project
-
+The Art of the Cocktail is a fun application that gives the user the opportunity to explore the world of art while enjoying art inspired cocktails. The app  employs React, React Router and Express to create a playful adventure for the art lover in all of us. 
 <br>
 
 <h3 align="center">Home Page</h3>
-<p align="center"><img width="750" src="https://user-images.githubusercontent.com/63877492/201547703-93fdeb27-3293-4676-af51-99cadef06499.mov" alt="The Art of the Cocktail Home Page"></p>
+
+https://user-images.githubusercontent.com/63877492/201548802-86b53ea0-2b8a-45c2-9f67-33a3304efdb1.mov
+
 
 <h3 align="center">Saved Page</h3>
-<p align="center"><img width="750" src="https://user-images.githubusercontent.com/63877492/201547774-ce5be6a5-0cd5-4d07-9a5e-7dd1a98a2737.mov" alt="The Art of the Cocktail Saved Page"></p>
+
+https://user-images.githubusercontent.com/63877492/201548870-73286d25-785d-4985-8078-493894c69036.mov
 
 <br />
-This paired project was assigned during the third module of Turing's Front-End Engineering program, about 13-14 weeks into its students learning how to code. The details of this project are outlined in <a href="https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html">this</a> project spec.
+This was a solo showcase project assigned in the third module of Turing's Front-End engineering program. The details of this project are outlined in <a href="https://frontend.turing.edu/projects/module-3/showcase.html">this</a> project spec.
 
 ### Built With
 
@@ -67,23 +70,25 @@ This paired project was assigned during the third module of Turing's Front-End E
 
 ## Roadmap
 
-- [ ] Create built-in databases using Express and Node.js
-- [ ] Enhance search feature to handle finding movies by genre
+- [ ] Create functionality for users to post their favorite paintings.
+- [ ] Allow users to save their favorite painting.
+- [ ] Give users the ability to connect to their favorite work, by connecting them to a museum currently showing that work.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Features
-
-- Created with React, this single-page application utilizes React Router to create a multi-page user experience
+- Created with React, this single-page application utilizes React Router to create a multi-page user experience.
+- Uses PropTypes to ensure a seamless code.
 - Implements acceptance testing with a robust Cypress testing suite featuring error-handling as well as happy and sad paths
-- Utilizes RESTful APIs to populate displays, and features third-party dependencies to enhance user experience
+- Utilizes an Express static back-end for a unique user experience.
+- Mobile responsiveness.
 
 ### Reflections
 <b>Wins:</b><br>
-Creating this application bolstered our understanding of React's data down, actions up model. We drafted a component tree that reflects the data's flow, and were able to build on top of this foundation by making a search bar that relies on data shared between sibling components. We also installed and incorporated componenets from different libraries to further enhance the user experience, and are really excited about the embedded movie trailer videos!
+Creating this application cemented my understanding of React's data down actions up model. It gave me the opportunity to build a small back-end, something I was curious about, but had yet had the opportunity to do.
 <p>
 <b>Challenges:</b><br>
-Working with React Router posed a unique challenge when we were trying to handle bad URLs. With some dedication and trial-and-error, we were able to come to a working solution to redirect users to a catch-all error component that offers an easy way back to the home page.
+Using Express was a challange, as well as the time constrates on this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
