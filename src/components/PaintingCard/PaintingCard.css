@@ -15,3 +15,23 @@
   margin-bottom: 7vh;
   margin-top: 0;
 }
+
+
+@media only screen and (min-width:300px) and (max-width:480px) {
+  .painting {
+    height: 20vh;
+  }
+}
+
+@media only screen and (min-width:481px) and (max-width:768px) {
+  .painting {
+    height: 30vh;
+  }
+}
+
+
+@media only screen and (min-width: 769px) and (max-width:1024px) {
+  .painting {
+    height: 30vh;
+  }
+}

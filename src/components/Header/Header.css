@@ -26,3 +26,52 @@ h1 {
     color: #000000;
     transition: 0.4s;
   }
+
+  @media only screen and (min-width:300px) and (max-width:480px) {
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      height: 20vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 4vh;
+      text-align: center;
+    }
+
+    .saved-cocktails-button {
+      height: 3vh;
+      margin-right: 3vw;
+    }
+
+  }
+
+   @media only screen and (min-width:481px) and (max-width:768px) {
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      height: 20vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 4vh;
+      text-align: center;
+    }
+
+    .saved-cocktails-button {
+      height: 4vh;
+      margin-right: 3vw;
+    }
+  }
+
+  
+  @media only screen and (min-width: 769px) and (max-width:1024px) {
+    .saved-cocktails-button {
+      height: 4vh;
+      margin-right: 6vw;
+    }
+  }
