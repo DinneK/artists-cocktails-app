@@ -22,17 +22,17 @@ class SearchByLiquor extends Component {
       <section className="liquor-search">
         <select name="liquors" onChange={this.handleChange}>
           <option value={null}>Select Liquor</option>
-          <option value="vodka">Vodka</option>
           <option value="gin">Gin</option>
+          <option value="vodka">Vodka</option>
           <option value="tequila">Tequila</option>
-          <option value="absinthe">Absinthe</option>
-          <option value="scotch">Scotch</option>
-          <option value="champagne">Champagne</option>
-          <option value="whiskey">Whiskey</option>
           <option value="mezcal">Mezcal</option>
-          <option value="sake">Sake</option>
           <option value="rum">Rum</option>
+          <option value="whiskey">Whiskey</option>
+          <option value="scotch">Scotch</option>
           <option value="bourbon">Bourbon</option>
+          <option value="champagne">Champagne</option>
+          <option value="sake">Sake</option>
+          <option value="absinthe">Absinthe</option>
         </select>
       </section>
     );
