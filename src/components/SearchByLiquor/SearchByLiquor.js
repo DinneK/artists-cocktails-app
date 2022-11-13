@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./SearchByLiquor";
 
 class SearchByLiquor extends Component {
@@ -8,7 +9,6 @@ class SearchByLiquor extends Component {
       search: "",
     };
   }
-
   handleChange = (event) => {
     const { value } = event.target;
     this.setState({
@@ -40,3 +40,7 @@ class SearchByLiquor extends Component {
 }
 
 export default SearchByLiquor;
+
+SearchByLiquor.propTypes = {
+  props: PropTypes.func,
+};

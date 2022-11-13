@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import "./SearchByTitle";
 
 class SearchByTitle extends Component {
@@ -33,3 +34,7 @@ class SearchByTitle extends Component {
 }
 
 export default SearchByTitle;
+
+SearchByTitle.propTypes = {
+  props: PropTypes.func,
+};
