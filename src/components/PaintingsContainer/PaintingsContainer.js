@@ -67,15 +67,15 @@ const PaintingsContainer = ({
     });
   }
 
-  let error = paintingCards.length === 0 ? true : false;
+  let notFound = paintingCards.length === 0 ? true : false;
 
-  if (loading && error) {
-    error = false;
+  if (loading && notFound) {
+    notFound = false;
   }
 
   return (
     <div className="paintings-container">
-      {error && (
+      {notFound && (
         <div className="error-container">
           <span className="error">
             Sorry, that work doesn't exist! Try again.
@@ -93,5 +93,5 @@ PaintingsContainer.propTypes = {
   artists: PropTypes.array.isRequired,
   searchByTitle: PropTypes.string.isRequired,
   searchByLiquor: PropTypes.string.isRequired,
-  loading: PropTypes.string,
+  loading: PropTypes.bool,
 };

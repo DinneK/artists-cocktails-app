@@ -5,3 +5,15 @@
   justify-content: center;
   margin-bottom: 3%;
 }
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  height: 70vh;
+  justify-content: center;
+}
+
+.loading {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 4vh;
+}

@@ -104,13 +104,13 @@ class App extends Component {
               artists={this.state.artists}
               searchByTitle={this.state.searchTitle}
               searchByLiquor={this.state.searchLiquor}
+              loading={this.state.loading}
             />
           </Route>
           <Route
             exact
             path="/artists/:artist"
             render={({ match }) => {
-              // console.log("1", match);
               const renderPainting = this.state.artists.find(
                 (painting) => painting.id === parseInt(match.params.artist)
               );
