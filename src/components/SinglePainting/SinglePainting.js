@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./SinglePainting.css";
 
 const SinglePainting = ({
@@ -51,3 +52,9 @@ const SinglePainting = ({
 };
 
 export default SinglePainting;
+
+SinglePainting.propTypes = {
+  artists: PropTypes.array,
+  searchByTitle: PropTypes.string,
+  searchByLiquor: PropTypes.string,
+};

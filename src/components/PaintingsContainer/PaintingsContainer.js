@@ -93,4 +93,5 @@ PaintingsContainer.propTypes = {
   artists: PropTypes.array.isRequired,
   searchByTitle: PropTypes.string.isRequired,
   searchByLiquor: PropTypes.string.isRequired,
+  loading: PropTypes.string,
 };

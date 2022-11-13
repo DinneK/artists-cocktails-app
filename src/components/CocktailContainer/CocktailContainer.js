@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import SavedCocktails from "../SavedCocktails/SavedCocktails";
 import "./CocktailContainer.css";
 import bookmarkAdd from "../../assets/bookmark_add.svg";
 import bookmarkDelete from "../../assets/bookmark_delete.svg";
+import PropTypes from "prop-types";
 
 const CocktailContainer = ({
   cocktail,
@@ -81,3 +81,10 @@ const CocktailContainer = ({
 };
 
 export default CocktailContainer;
+
+CocktailContainer.propTypes = {
+  cocktail: PropTypes.object,
+  onSaveCocktail: PropTypes.func,
+  onDeleteCocktail: PropTypes.func,
+  savedCocktails: PropTypes.array,
+};

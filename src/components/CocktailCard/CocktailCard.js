@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./CocktailCard.css";
 import bookmarkDelete from "../../assets/bookmark_delete.svg";
-// import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const CocktailCard = ({ drinkImage, title, id, onDeleteCocktail }) => {
   const handleDeleteCocktailClick = (id) => {
@@ -27,3 +27,10 @@ const CocktailCard = ({ drinkImage, title, id, onDeleteCocktail }) => {
 };
 
 export default CocktailCard;
+
+CocktailCard.propTypes = {
+  drinkImage: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  onDeleteCocktail: PropTypes.func,
+};

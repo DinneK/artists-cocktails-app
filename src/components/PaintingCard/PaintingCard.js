@@ -1,8 +1,8 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import "./PaintingCard.css";
 
-const PaintingCard = ({ id, painting, title, mainLiquor }) => {
+const PaintingCard = ({ painting, title }) => {
   return (
     <div className="card">
       <img src={painting} alt={`a painting of ${title}`} className="painting" />
@@ -13,9 +13,7 @@ const PaintingCard = ({ id, painting, title, mainLiquor }) => {
 
 export default PaintingCard;
 
-// PaintingCard.propTypes = {
-//   id: PropTypes.number.isRequired,
-//   painting: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   mainLiquor: PropTypes.string.isRequired,
-// };
+PaintingCard.propTypes = {
+  painting: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};

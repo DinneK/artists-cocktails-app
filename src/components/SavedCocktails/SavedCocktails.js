@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CocktailCard from "../CocktailCard/CocktailCard";
+import PropTypes from "prop-types";
 import "./SavedCocktails.css";
 
 const SavedCocktails = ({ savedCocktails, artists, onDeleteCocktail }) => {
@@ -37,9 +38,14 @@ const SavedCocktails = ({ savedCocktails, artists, onDeleteCocktail }) => {
           <button className="home-from-saved">HOME</button>
         </Link>
       </div>
-      {/* <button onClick={(event) => this.handleChange(event)}>Save</button> */}
     </div>
   );
 };
 
 export default SavedCocktails;
+
+SavedCocktails.propTypes = {
+  savedCocktails: PropTypes.array.isRequired,
+  artists: PropTypes.array.isRequired,
+  onDeleteCocktail: PropTypes.func,
+};

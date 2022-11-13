@@ -1,7 +1,7 @@
 import React from "react";
 import "./BadURL.css";
 
-function BadURL(props) {
+function BadURL() {
   return (
     <div className="error-container">
       <span className="error">
