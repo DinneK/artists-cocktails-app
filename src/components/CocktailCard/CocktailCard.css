@@ -37,3 +37,15 @@
   color: #000000;
   text-decoration: none;
 }
+
+@media only screen and (min-width:300px) and (max-width:480px) {
+  .saved-cocktail-card-container {
+    width: 95vw;
+  }
+}
+
+@media only screen and (min-width:481px) and (max-width:768px) {
+  .saved-cocktail-card-container {
+    width: 75vw;
+  }
+}
