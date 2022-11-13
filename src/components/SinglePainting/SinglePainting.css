@@ -88,3 +88,31 @@
   color: #000000;
   transition: 0.4s;
 }
+
+@media only screen and (min-width:300px) and (max-width:480px) {
+  .single-painting-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
+  }
+}
+
+@media only screen and (min-width:481px) and (max-width:768px) {
+  .single-painting-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+  }
+}
+
+
+@media only screen and (min-width: 769px) and (max-width:1024px) {
+  .single-painting-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+  }
+}
