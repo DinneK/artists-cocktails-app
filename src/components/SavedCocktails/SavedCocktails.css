@@ -27,3 +27,17 @@
   color: #000000;
   transition: 0.4s;
 }
+
+@media only screen and (min-width:300px) and (max-width:480px) {
+  .saved-cocktail-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width:481px) and (max-width:768px) {
+  .saved-cocktail-container {
+    display: flex;
+    flex-direction: column;
+  }
+}

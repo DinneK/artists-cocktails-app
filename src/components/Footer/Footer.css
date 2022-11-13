@@ -27,3 +27,51 @@ h4 {
 .link-logo {
   height: 5vh;
 }
+
+
+@media only screen and (min-width:300px) and (max-width:480px) {
+  .footer-container {
+        justify-content: center;
+        margin-top: 95%;
+        align-items: flex-end;
+  }  
+
+  .name-container {
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+@media only screen and (min-width:481px) and (max-width:768px) {
+  .footer-container {
+    justify-content: center;
+    margin-top: 95%;
+    align-items: flex-end;
+  }  
+
+  .name-container {
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+@media only screen and (min-width: 769px) and (max-width:1024px) {
+  .footer-container {
+    justify-content: center;
+    margin-top: 95%;
+    align-items: flex-end;
+  }  
+
+  .name-container {
+    flex-direction: row;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+  }
+}

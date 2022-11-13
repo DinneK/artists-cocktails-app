@@ -135,6 +135,7 @@
   }
 
   .outer-cocktail-img-container {
+    margin-bottom: 4%;
     width: 80vw;
   }
 
@@ -146,6 +147,10 @@
   .single-cocktail-picture{
     height: 40vh;
     max-width: 60vw;
+  }
+
+  .single-cocktail-title {
+    margin-top: 70%;
   }
 
   .cocktail-description {
@@ -170,6 +175,7 @@
   }
 
   .outer-cocktail-img-container {
+    margin-bottom: 4%;
     width: 80vw;
   }
 
@@ -198,6 +204,7 @@
 
 @media only screen and (min-width: 769px) and (max-width:1024px) {
   .outer-cocktail-img-container {
+    margin-bottom: 4%;
     width: 70vw;
   }
 
