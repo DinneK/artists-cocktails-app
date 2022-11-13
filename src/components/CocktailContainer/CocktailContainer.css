@@ -37,6 +37,7 @@
   height: 40vh;
   border-radius: 4%;
   border: 2px solid #000000;
+  max-width: 37vw;
 }
 
 .cocktail-description {

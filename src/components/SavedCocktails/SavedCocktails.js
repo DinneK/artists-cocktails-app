@@ -1,10 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CocktailCard from "../CocktailCard/CocktailCard";
 import "./SavedCocktails.css";
 
 const SavedCocktails = ({ savedCocktails, artists, onDeleteCocktail }) => {
-  console.log({ savedCocktails });
-
   const savedCocktailsCont = savedCocktails.map((savedCocktailId) => {
     const artist = artists.find((artist) => artist.id === savedCocktailId);
     const { cocktail_image, cocktail_name, id } = artist;
@@ -33,6 +32,11 @@ const SavedCocktails = ({ savedCocktails, artists, onDeleteCocktail }) => {
       <section className="saved-cocktail-container">
         {savedCocktailsCont}
       </section>
+      <div className="saved-button-styling">
+        <Link to={`/`}>
+          <button className="home-from-saved">HOME</button>
+        </Link>
+      </div>
       {/* <button onClick={(event) => this.handleChange(event)}>Save</button> */}
     </div>
   );

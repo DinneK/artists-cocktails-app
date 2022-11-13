@@ -1,0 +1,29 @@
+.saved-cocktail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.saved-button-styling {
+  align-items: center;;
+  display: flex;
+  justify-content: center;
+  margin-top: 1%;
+}
+
+.home-from-saved {
+  background-color: #000000;
+  border: none;
+  color: #ffffff;
+  font-family: 'Cinzel Decorative', cursive;
+  font-weight: 600;
+  height: 4vh;
+  margin-right: 3vw;
+}
+
+.home-from-saved:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transition: 0.4s;
+}

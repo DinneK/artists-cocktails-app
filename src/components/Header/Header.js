@@ -1,8 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
+  const params = useParams();
+  console.log({ params });
   return (
     <div className="header-container">
       <h1>The Art of the Cocktail</h1>
