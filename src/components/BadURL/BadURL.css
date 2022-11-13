@@ -1,0 +1,12 @@
+.error-container {
+  align-items: center;
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+}
+
+.error {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 3vh;
+  font-weight: 600;
+}
