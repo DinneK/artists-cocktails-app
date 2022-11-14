@@ -2,7 +2,8 @@
   align-items: center;
   display: flex;
   height: 70vh;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .error {

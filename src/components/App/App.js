@@ -145,7 +145,6 @@ class App extends Component {
               artists={this.state.artists}
               savedCocktails={this.state.savedCocktails}
               onDeleteCocktail={this.handleDeleteCocktail}
-              // addCocktail={this.addCocktail}
             />
           </Route>
           <Route component={BadURL} />
