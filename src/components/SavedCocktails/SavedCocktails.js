@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import CocktailCard from "../CocktailCard/CocktailCard";
 import PropTypes from "prop-types";
 import "./SavedCocktails.css";
 
 const SavedCocktails = ({ savedCocktails, artists, onDeleteCocktail }) => {
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem("drink"));
+  }, []);
+
   const savedCocktailsCont = savedCocktails.map((savedCocktailId) => {
     const artist = artists.find((artist) => artist.id === savedCocktailId);
     const { cocktail_image, cocktail_name, id } = artist;

@@ -21,7 +21,7 @@ class App extends Component {
       artists: [],
       searchTitle: "",
       searchLiquor: "",
-      savedCocktails: [],
+      // savedCocktails: [],
     };
   }
 
@@ -58,25 +58,25 @@ class App extends Component {
     this.setState({ searchLiquor: "" });
   };
 
-  handleSaveCocktail = (id) => {
-    const { savedCocktails } = this.state;
-    if (savedCocktails.includes(id)) {
-      return;
-    }
-    const newSavedCocktailsState = [...savedCocktails, id];
-    this.setState({ savedCocktails: newSavedCocktailsState });
-  };
+  // handleSaveCocktail = (id) => {
+  //   const { savedCocktails } = this.state;
+  //   if (savedCocktails.includes(id)) {
+  //     return;
+  //   }
+  //   const newSavedCocktailsState = [...savedCocktails, id];
+  //   this.setState({ savedCocktails: newSavedCocktailsState });
+  // };
 
-  handleDeleteCocktail = (id) => {
-    const { savedCocktails } = this.state;
-    if (!savedCocktails.includes(id)) {
-      return;
-    }
-    const newSavedCocktailsState = savedCocktails.filter(
-      (cocktailId) => cocktailId !== id
-    );
-    this.setState({ savedCocktails: newSavedCocktailsState });
-  };
+  // handleDeleteCocktail = (id) => {
+  //   const { savedCocktails } = this.state;
+  //   if (!savedCocktails.includes(id)) {
+  //     return;
+  //   }
+  //   const newSavedCocktailsState = savedCocktails.filter(
+  //     (cocktailId) => cocktailId !== id
+  //   );
+  //   this.setState({ savedCocktails: newSavedCocktailsState });
+  // };
 
   render() {
     return (
@@ -133,9 +133,9 @@ class App extends Component {
               return (
                 <CocktailContainer
                   cocktail={renderCocktail}
-                  onSaveCocktail={this.handleSaveCocktail}
-                  onDeleteCocktail={this.handleDeleteCocktail}
-                  savedCocktails={this.state.savedCocktails}
+                  // onSaveCocktail={this.handleSaveCocktail}
+                  // onDeleteCocktail={this.handleDeleteCocktail}
+                  // savedCocktails={this.state.savedCocktails}
                 />
               );
             }}
@@ -143,8 +143,8 @@ class App extends Component {
           <Route exact path="/savedcocktails">
             <SavedCocktails
               artists={this.state.artists}
-              savedCocktails={this.state.savedCocktails}
-              onDeleteCocktail={this.handleDeleteCocktail}
+              // savedCocktails={this.state.savedCocktails}
+              // onDeleteCocktail={this.handleDeleteCocktail}
             />
           </Route>
           <Route component={BadURL} />

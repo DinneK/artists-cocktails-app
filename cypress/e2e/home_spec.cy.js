@@ -2,7 +2,7 @@ describe("The Artof the Cocktail home page flow", () => {
   beforeEach(() => {
     cy.intercept(
       "GET",
-      "https://artists-cocktails-api.herokuapp.com/api/v1/artists",
+      "https://artists-cocktails-api.vercel.app/api/v1/artists",
       {
         statusCode: 200,
         ok: true,
@@ -15,7 +15,7 @@ describe("The Artof the Cocktail home page flow", () => {
   it("Should display error handling message to user if the GET network request fails", () => {
     cy.intercept(
       "GET",
-      "https://artists-cocktails-api.herokuapp.com/api/v1/artists",
+      "https://artists-cocktails-api.vercel.app/api/v1/artists",
       {
         statusCode: 404,
         ok: false,

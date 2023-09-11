@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./CocktailContainer.css";
 import bookmarkAdd from "../../assets/bookmark_add.svg";
 import bookmarkDelete from "../../assets/bookmark_delete.svg";
@@ -7,16 +7,43 @@ import PropTypes from "prop-types";
 
 const CocktailContainer = ({
   cocktail,
-  onSaveCocktail,
-  onDeleteCocktail,
-  savedCocktails,
+  // onSaveCocktail,
+  // onDeleteCocktail,
+  // savedCocktails,
 }) => {
-  const handleSaveCocktailClick = (id) => {
-    onSaveCocktail(id);
+  const { cocktail: cocktailId } = useParams();
+  const [drink, setDrink] = useState(() => {
+    const items = JSON.parse(localStorage.getItem("drink"));
+    return items
+      ? items.find((item) => item.id === parseInt(cocktailId))
+      : null;
+  });
+
+  useEffect(() => {
+    if (drink) {
+      const item = JSON.parse(localStorage.getItem("drink"));
+      const itemValue = item ? [...item, drink] : [drink];
+      localStorage.setItem("drink", JSON.stringify(itemValue));
+    }
+  }, [drink]);
+
+  const handleSaveCocktailClick = (cocktail) => {
+    // onSaveCocktail(cocktail.id);
+    setDrink(cocktail);
   };
 
-  const handleDeleteCocktailClick = (id) => {
-    onDeleteCocktail(id);
+  const handleDeleteCocktailClick = () => {
+    /*
+    1.) Get the drinks from the local storage
+    2.).removeItem()
+   */
+    // onDeleteCocktail(id);
+    // const savedItems = JSON.parse(localStorage.getItem("drink"));
+    // const leftItems = savedItems.filter((savedItem) => {
+    //   return savedItem.id === cocktail;
+    // });
+    // return localStorage.removeItem("drink", JSON.stringify(leftItems));
+    // setDrink(null);
   };
   return (
     <section className="single-cocktail-container">
@@ -55,15 +82,15 @@ const CocktailContainer = ({
         <Link to={`/`}>
           <button className="home-from-cocktail">HOME</button>
         </Link>
-        {!savedCocktails.includes(cocktail.id) && (
+        {!drink && (
           <button
             className="save"
-            onClick={() => handleSaveCocktailClick(cocktail.id)}
+            onClick={() => handleSaveCocktailClick(cocktail)}
           >
             <img className="save-logo" src={bookmarkAdd} alt="add favorite" />
           </button>
         )}
-        {savedCocktails.includes(cocktail.id) && (
+        {drink && (
           <button
             className="save"
             onClick={() => handleDeleteCocktailClick(cocktail.id)}

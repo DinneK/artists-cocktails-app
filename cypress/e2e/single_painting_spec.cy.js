@@ -2,7 +2,7 @@ describe("The Art of the Cocktail single painting page flow", () => {
   beforeEach(() => {
     cy.intercept(
       "GET",
-      "https://artists-cocktails-api.herokuapp.com/api/v1/artists",
+      "https://artists-cocktails-api.vercel.app/api/v1/artists",
       {
         statusCode: 200,
         ok: true,
