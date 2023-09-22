@@ -5,45 +5,39 @@ import bookmarkAdd from "../../assets/bookmark_add.svg";
 import bookmarkDelete from "../../assets/bookmark_delete.svg";
 import PropTypes from "prop-types";
 
-const CocktailContainer = ({
-  cocktail,
-  // onSaveCocktail,
-  // onDeleteCocktail,
-  // savedCocktails,
-}) => {
+const CocktailContainer = ({ cocktail, onSaveCocktail, onDeleteCocktail }) => {
   const { cocktail: cocktailId } = useParams();
-  const [drink, setDrink] = useState(() => {
+  const [drink, setDrink] = useState();
+  const [isSaved, setIsSaved] = useState(() => {
     const items = JSON.parse(localStorage.getItem("drink"));
     return items
-      ? items.find((item) => item.id === parseInt(cocktailId))
-      : null;
+      ? Boolean(items.find((item) => item.id === parseInt(cocktailId)))
+      : false;
   });
 
   useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("drink"));
+    let newCocktailsArr;
     if (drink) {
-      const item = JSON.parse(localStorage.getItem("drink"));
-      const itemValue = item ? [...item, drink] : [drink];
-      localStorage.setItem("drink", JSON.stringify(itemValue));
+      newCocktailsArr = items ? [...items, drink] : [drink];
+    } else {
+      newCocktailsArr = items
+        ? items.filter((item) => item.id !== cocktail.id)
+        : [];
     }
-  }, [drink]);
+    localStorage.setItem("drink", JSON.stringify(newCocktailsArr));
+  }, [drink, cocktail.id]);
 
   const handleSaveCocktailClick = (cocktail) => {
-    // onSaveCocktail(cocktail.id);
+    onSaveCocktail(cocktail);
+    setIsSaved(true);
     setDrink(cocktail);
   };
 
   const handleDeleteCocktailClick = () => {
-    /*
-    1.) Get the drinks from the local storage
-    2.).removeItem()
-   */
-    // onDeleteCocktail(id);
-    // const savedItems = JSON.parse(localStorage.getItem("drink"));
-    // const leftItems = savedItems.filter((savedItem) => {
-    //   return savedItem.id === cocktail;
-    // });
-    // return localStorage.removeItem("drink", JSON.stringify(leftItems));
-    // setDrink(null);
+    onDeleteCocktail(cocktail);
+    setIsSaved(false);
+    setDrink(null);
   };
   return (
     <section className="single-cocktail-container">
@@ -82,15 +76,7 @@ const CocktailContainer = ({
         <Link to={`/`}>
           <button className="home-from-cocktail">HOME</button>
         </Link>
-        {!drink && (
-          <button
-            className="save"
-            onClick={() => handleSaveCocktailClick(cocktail)}
-          >
-            <img className="save-logo" src={bookmarkAdd} alt="add favorite" />
-          </button>
-        )}
-        {drink && (
+        {isSaved ? (
           <button
             className="save"
             onClick={() => handleDeleteCocktailClick(cocktail.id)}
@@ -100,6 +86,13 @@ const CocktailContainer = ({
               src={bookmarkDelete}
               alt="delete favorite"
             />
+          </button>
+        ) : (
+          <button
+            className="save"
+            onClick={() => handleSaveCocktailClick(cocktail)}
+          >
+            <img className="save-logo" src={bookmarkAdd} alt="add favorite" />
           </button>
         )}
       </div>

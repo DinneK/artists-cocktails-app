@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "./SearchByLiquor";
+import "./SearchByLiquor.css";
 
 class SearchByLiquor extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class SearchByLiquor extends Component {
   render() {
     return (
       <section className="liquor-search">
-        <select name="liquors" onChange={this.handleChange}>
+        <select name="liquors" onChange={this.handleChange} className="search">
           <option value={null}>Select Liquor</option>
           <option value="gin">Gin</option>
           <option value="vodka">Vodka</option>

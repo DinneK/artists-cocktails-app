@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "./SearchByTitle";
+import "./SearchByTitle.css";
 
 class SearchByTitle extends Component {
   constructor(props) {
@@ -22,6 +22,7 @@ class SearchByTitle extends Component {
     return (
       <section>
         <input
+          className="search"
           type="text"
           name="search"
           value={this.state.search}

@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 const CocktailCard = ({ drinkImage, title, id, onDeleteCocktail }) => {
   const handleDeleteCocktailClick = (id) => {
-    onDeleteCocktail(id);
+    onDeleteCocktail({ id });
   };
 
   return (

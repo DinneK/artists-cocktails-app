@@ -1,29 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CocktailCard from "../CocktailCard/CocktailCard";
 import PropTypes from "prop-types";
 import "./SavedCocktails.css";
 
 const SavedCocktails = ({ savedCocktails, artists, onDeleteCocktail }) => {
+  const [error, setError] = useState(!Boolean(savedCocktails.length));
+
   useEffect(() => {
-    const item = JSON.parse(localStorage.getItem("drink"));
-  }, []);
+    setError(!Boolean(savedCocktails.length));
+  }, [savedCocktails.length]);
 
-  const savedCocktailsCont = savedCocktails.map((savedCocktailId) => {
-    const artist = artists.find((artist) => artist.id === savedCocktailId);
-    const { cocktail_image, cocktail_name, id } = artist;
-    return (
-      <CocktailCard
-        key={id}
-        drinkImage={cocktail_image}
-        title={cocktail_name}
-        id={id}
-        onDeleteCocktail={onDeleteCocktail}
-      />
-    );
-  });
-
-  let error = savedCocktailsCont.length === 0 ? true : false;
+  const savedCocktailsCont = !savedCocktails.length
+    ? error
+    : savedCocktails.map((savedCocktail) => {
+        const artist = artists.find((artist) => artist.id === savedCocktail.id);
+        const { cocktail_image, cocktail_name, id } = artist;
+        return (
+          <CocktailCard
+            key={id}
+            drinkImage={cocktail_image}
+            title={cocktail_name}
+            id={id}
+            onDeleteCocktail={onDeleteCocktail}
+          />
+        );
+      });
 
   return (
     <div>

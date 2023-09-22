@@ -1,9 +1,13 @@
 .searches {
-  align-items: center;
   display: flex;
   height: 7vh;
   justify-content: center;
   margin-bottom: 3%;
+}
+
+.search {
+  height: 5hv;
+  margin: 3px;
 }
 
 .loading-container {

@@ -21,7 +21,7 @@ class App extends Component {
       artists: [],
       searchTitle: "",
       searchLiquor: "",
-      // savedCocktails: [],
+      savedCocktails: [],
     };
   }
 
@@ -58,25 +58,25 @@ class App extends Component {
     this.setState({ searchLiquor: "" });
   };
 
-  // handleSaveCocktail = (id) => {
-  //   const { savedCocktails } = this.state;
-  //   if (savedCocktails.includes(id)) {
-  //     return;
-  //   }
-  //   const newSavedCocktailsState = [...savedCocktails, id];
-  //   this.setState({ savedCocktails: newSavedCocktailsState });
-  // };
+  handleSaveCocktail = (cocktail) => {
+    const { savedCocktails } = this.state;
+    const foundCocktail = savedCocktails.find(
+      (savedCocktail) => savedCocktail.id === cocktail.id
+    );
+    if (foundCocktail) {
+      return;
+    }
+    const newSavedCocktailsState = [...savedCocktails, cocktail];
+    this.setState({ savedCocktails: newSavedCocktailsState });
+  };
 
-  // handleDeleteCocktail = (id) => {
-  //   const { savedCocktails } = this.state;
-  //   if (!savedCocktails.includes(id)) {
-  //     return;
-  //   }
-  //   const newSavedCocktailsState = savedCocktails.filter(
-  //     (cocktailId) => cocktailId !== id
-  //   );
-  //   this.setState({ savedCocktails: newSavedCocktailsState });
-  // };
+  handleDeleteCocktail = (cocktail) => {
+    const { savedCocktails } = this.state;
+    const newCocktailArr = savedCocktails.filter((savedCocktail) => {
+      return savedCocktail.id !== cocktail.id;
+    });
+    this.setState({ savedCocktails: newCocktailArr });
+  };
 
   render() {
     return (
@@ -130,12 +130,29 @@ class App extends Component {
               const renderCocktail = this.state.artists.find(
                 (cocktails) => cocktails.id === parseInt(match.params.cocktail)
               );
+              const {
+                artist_liquor_fact,
+                cocktail_image,
+                cocktail_name,
+                id,
+                ingredients,
+                instructions,
+                main_cocktail_liqour,
+              } = renderCocktail;
               return (
                 <CocktailContainer
-                  cocktail={renderCocktail}
-                  // onSaveCocktail={this.handleSaveCocktail}
-                  // onDeleteCocktail={this.handleDeleteCocktail}
-                  // savedCocktails={this.state.savedCocktails}
+                  cocktail={{
+                    artist_liquor_fact,
+                    cocktail_image,
+                    cocktail_name,
+                    id,
+                    ingredients,
+                    instructions,
+                    main_cocktail_liqour,
+                  }}
+                  onSaveCocktail={this.handleSaveCocktail}
+                  onDeleteCocktail={this.handleDeleteCocktail}
+                  savedCocktails={this.state.savedCocktails}
                 />
               );
             }}
@@ -143,8 +160,8 @@ class App extends Component {
           <Route exact path="/savedcocktails">
             <SavedCocktails
               artists={this.state.artists}
-              // savedCocktails={this.state.savedCocktails}
-              // onDeleteCocktail={this.handleDeleteCocktail}
+              savedCocktails={this.state.savedCocktails}
+              onDeleteCocktail={this.handleDeleteCocktail}
             />
           </Route>
           <Route component={BadURL} />
