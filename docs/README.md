@@ -79,7 +79,7 @@ This was a solo showcase project assigned in the third module of Turing's Front-
 ## Features
 - Created with React, this single-page application utilizes React Router to create a multi-page user experience.
 - Uses PropTypes to ensure a seamless code.
-- Implements acceptance testing with a robust Cypress testing suite featuring error-handling as well as happy and sad paths
+- Implements acceptance testing with a robust Cypress testing suite featuring error handling as well as happy and sad paths
 - Utilizes an Express static back-end for a unique user experience.
 - Mobile responsiveness.
 
@@ -88,7 +88,7 @@ This was a solo showcase project assigned in the third module of Turing's Front-
 Creating this application cemented my understanding of React's data down actions up model. It gave me the opportunity to build a small back-end, something I was curious about, but had yet had the opportunity to do.
 <p>
 <b>Challenges:</b><br>
-Using Express was a challange, as well as the time constrates on this project.
+Using Express was a challenge, as well as the time constraints on this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
